@@ -1,5 +1,5 @@
 from PIL import Image
-from reportlab.lib.pagesizes import A0 #modify based on your needs, preferably A0 for maximum image quality
+from reportlab.lib.pagesizes import A0 # Modify based on your needs, preferably A0 for maximum image quality
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import os
