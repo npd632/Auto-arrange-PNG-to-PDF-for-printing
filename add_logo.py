@@ -2,9 +2,9 @@ import os
 from PIL import Image, ImageOps
 
 # === CONFIGURATION ===
-input_folder = "C:\\Users\\FPT\\Downloads\\drive-download-20250807T123851Z-1-001"
-output_folder = "C:\\Users\\FPT\\Documents\\Python\\VIT\\output"
-logo_path = "C:\\Users\\FPT\\Documents\\Python\\VIT\\logo.png"
+input_folder = r"input_folder_path"
+output_folder = r"output_forlder_path"
+logo_path = r"logo_file_path"
 
 # Load the logo once
 logo_original = Image.open(logo_path).convert("RGBA")
@@ -17,11 +17,11 @@ for filename in os.listdir(input_folder):
     if filename.lower().endswith(".jpg"):
         img_path = os.path.join(input_folder, filename)
         image = Image.open(img_path).convert("RGBA")
-        image = ImageOps.exif_transpose(image)  # ✅ Fix orientation
+        image = ImageOps.exif_transpose(image)  # Fix orientation for vertical images
 
         width, height = image.size
 
-        # Determine shorter side
+        # Determine shorter side (positioning and scaling of logo is determined based on the size of te image so the code works regardless of image resolution)
         shorter_side = min(width, height)
 
         # Get original logo dimensions
@@ -46,4 +46,5 @@ for filename in os.listdir(input_folder):
         output_path = os.path.join(output_folder, filename)
         final_image.save(output_path, "JPEG", quality=95)
 
-print("✅ All images processed and saved.")
+print("All images processed and saved.")
+
