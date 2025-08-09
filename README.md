@@ -1,3 +1,3 @@
-Sản phẩm này được tạo ra vì pxt quá lười xếp ảnh để in và npd bị dí làm thay
+Sản phẩm này được tạo ra vì npd bị pxt dí và npd theo chủ nghĩa work smarter not harder :3
 
-Install required modules: pip install pillow reportlab
+Install required modules: pillow, reportlab
